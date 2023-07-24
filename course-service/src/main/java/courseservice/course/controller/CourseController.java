@@ -1,7 +1,7 @@
 package courseservice.course.controller;
 
 import courseservice.course.dto.CourseDetailsView;
-import courseservice.course.dto.CreateCourseCommand;
+import courseservice.course.dto.AnnounceCourseCommand;
 import courseservice.course.dto.CourseView;
 import courseservice.course.service.CourseService;
 import lombok.AllArgsConstructor;
@@ -29,7 +29,7 @@ public class CourseController {
 
     @PostMapping // nem idempotens
     @ResponseStatus(HttpStatus.CREATED)
-    public CourseView create(@RequestBody CreateCourseCommand command) {
+    public CourseView create(@RequestBody AnnounceCourseCommand command) {
         return courseService.createCourse(command);
     }
 

@@ -3,7 +3,7 @@ package courseservice.course.dto;
 import lombok.Data;
 
 @Data
-public class CreateCourseCommand {
+public class AnnounceCourseCommand {
 
     private String name;
 
