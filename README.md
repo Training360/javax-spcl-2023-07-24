@@ -39,4 +39,4 @@ docker run -d -e POSTGRES_DB=employees -e POSTGRES_USER=employees -e POSTGRES_PA
 * Projekt megnyitása IDEA-ban
 * JDK beállítása
 * Alkalmazás indítása az `Application` osztállyal
-* A Swagger elérhető a `http://localhost:8081/swagger-ui` címen
+* A Swagger elérhető a `http://localhost:8081/swagger-ui.html` címen
