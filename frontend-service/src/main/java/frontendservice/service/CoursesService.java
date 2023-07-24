@@ -21,7 +21,8 @@ public class CoursesService {
         return courseClient.findAllCourses();
     }
 
-    public CourseDetailsView findCourseById(long id) {
-        return courseClient.findCourseById(id);
+    public CompositeCourseDetailsView findCourseById(long id) {
+        var employees = employeesService.listEmployees();
+        return courseMapper.toComposite(courseClient.findCourseById(id), employees);
     }
 }
