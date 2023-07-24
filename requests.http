@@ -15,8 +15,11 @@ POST http://localhost:8081/api/roles
 Content-Type: application/json
 
 {
-    "name": "Junior developer"
+    "name": "Senior developer"
 }
+
+### List roles
+GET http://localhost:8081/api/roles
 
 ### Create course
 POST http://localhost:8083/api/courses

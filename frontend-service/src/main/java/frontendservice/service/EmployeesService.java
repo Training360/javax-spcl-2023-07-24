@@ -23,11 +23,11 @@ public class EmployeesService {
     }
 
     public List<RoleDto> listRoles() {
-        return null;
+        return employeeClient.roles();
     }
 
     public void createEmployee(CreateEmployeeRequest request) {
-
+        employeeClient.createEmployee(request);
     }
 
 }
