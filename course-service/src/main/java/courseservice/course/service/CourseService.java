@@ -28,8 +28,12 @@ public class CourseService {
         return courseMapper.toView(course);
     }
 
+    @Transactional(readOnly = true)
     public CourseDetailsView findCourseById(long id) {
-        return null;
+        var course = courseRepository.findById(id)
+                .orElseThrow();
+        return courseMapper.toDetailsView(course);
+
     }
 
     public List<CourseView> findAllCourses() {
