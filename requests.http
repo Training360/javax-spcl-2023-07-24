@@ -23,7 +23,7 @@ POST http://localhost:8083/api/courses
 Content-Type: application/json
 
 {
-    "name": "Spring Cloud",
+    "name": "Spring Boot",
     "limit": 5
 }
 
@@ -35,3 +35,6 @@ Content-Type: application/json
     "courseId": 1,
     "employeeIds": [1, 2]
 }
+
+### List courses
+GET http://localhost:8083/api/courses

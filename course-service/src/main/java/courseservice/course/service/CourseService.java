@@ -33,7 +33,7 @@ public class CourseService {
     }
 
     public List<CourseView> findAllCourses() {
-        return null;
+        return courseRepository.findAllView();
     }
 
     @Transactional

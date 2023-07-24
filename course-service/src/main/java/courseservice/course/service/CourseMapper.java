@@ -5,6 +5,8 @@ import courseservice.course.dto.CourseView;
 import courseservice.course.model.Course;
 import org.mapstruct.Mapper;
 
+import java.util.List;
+
 @Mapper(componentModel = "spring")
 public interface CourseMapper {
 
