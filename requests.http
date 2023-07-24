@@ -17,3 +17,21 @@ Content-Type: application/json
 {
     "name": "Junior developer"
 }
+
+### Create course
+POST http://localhost:8083/api/courses
+Content-Type: application/json
+
+{
+    "name": "Spring Cloud",
+    "limit": 5
+}
+
+### Enroll
+POST http://localhost:8083/api/courses/1/enrollments
+Content-Type: application/json
+
+{
+    "courseId": 1,
+    "employeeIds": [1, 2]
+}
