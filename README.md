@@ -1,0 +1,42 @@
+# Spring Cloud tanfolyam
+
+## Felhasznált irodalom
+
+Chris Richardson: Microservices Patterns, https://microservices.io/patterns/microservices.html
+Vaughn Vernon: Domain-Driven Design Distilled
+
+## Ajánlott irodalom
+
+Microservices with Spring Boot and Spring Cloud: Build resilient and scalable microservices using Spring Cloud, Istio, and Kubernetes, 2nd Edition 2nd ed. Edition
+Building Microservices - Designing Fine-Grained Systems 2nd Edition
+Cloud Native Spring in Action
+[Release It!: Design and Deploy Production-Ready Software (Pragmatic Programmers)](https://www.amazon.com/Release-Design-Deploy-Production-Ready-Software/dp/1680502395/ref=sr_1_15?keywords=continuous+delivery&qid=1677850778&s=books&sprefix=conti%2Cstripbooks-intl-ship%2C181&sr=1-15)
+
+## Architektúra
+
+![Architektúra](architektura-abra.png)
+
+## Klónozás
+
+```shell
+git clone https://github.com/Training360/javax-spcl-2023-07-24
+```
+
+## Saját projekt létrehozása
+
+* `mentoring-app` könyvtár létrehozása
+* A klónozott repo-ból az `employee-service` könyvtár átmásolása
+
+## employee-service elindítása
+
+* Docker Desktop indítása
+* `docker ps` parancs kiadása
+
+```shell
+docker run -d -e POSTGRES_DB=employees -e POSTGRES_USER=employees -e POSTGRES_PASSWORD=employees -p 5432:5432  --name employees-postgres postgres
+```
+
+* Projekt megnyitása IDEA-ban
+* JDK beállítása
+* Alkalmazás indítása az `Application` osztállyal
+* A Swagger elérhető a `http://localhost:8081/swagger-ui` címen
