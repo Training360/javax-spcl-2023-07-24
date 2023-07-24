@@ -11,15 +11,17 @@ import java.util.List;
 @AllArgsConstructor
 public class CoursesService {
 
+    private CourseClient courseClient;
+
     private EmployeesService employeesService;
 
     private CourseMapper courseMapper;
 
     public List<CourseView> findAllCourses() {
-        return null;
+        return courseClient.findAllCourses();
     }
 
     public CourseDetailsView findCourseById(long id) {
-        return null;
+        return courseClient.findCourseById(id);
     }
 }
