@@ -1,12 +1,11 @@
-package frontendservice.service;
+package frontendservice.coursegateway;
 
-import frontendservice.employeesgateway.Employee;
 import lombok.Data;
 
 import java.util.List;
 
 @Data
-public class CourseDetailsDto {
+public class CourseDetailsView {
 
     private Long id;
 
@@ -18,4 +17,7 @@ public class CourseDetailsDto {
 
     private int limit;
 
+    private List<Long> enrolledEmployees;
+
+    private List<Long> completedEmployees;
 }

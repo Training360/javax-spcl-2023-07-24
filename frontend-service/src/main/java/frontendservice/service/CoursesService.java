@@ -1,8 +1,7 @@
 package frontendservice.service;
 
-import frontendservice.coursegateway.Course;
-import frontendservice.coursegateway.CourseClient;
-import frontendservice.coursegateway.CourseDetails;
+import frontendservice.coursegateway.CourseDetailsView;
+import frontendservice.coursegateway.CourseView;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -12,16 +11,15 @@ import java.util.List;
 @AllArgsConstructor
 public class CoursesService {
 
-    private CourseClient courseClient;
-
     private EmployeesService employeesService;
 
     private CourseMapper courseMapper;
 
-    public List<Course> findAllCourses() {
-        return courseClient.findAllCourses();
+    public List<CourseView> findAllCourses() {
+        return null;
     }
 
-    public CourseDetailsDto findCourseById(long id) {
+    public CourseDetailsView findCourseById(long id) {
+        return null;
     }
 }

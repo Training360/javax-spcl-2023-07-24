@@ -1,6 +1,8 @@
 package frontendservice.service;
 
-import frontendservice.careergateway.CareerClient;
+import frontendservice.employeegateway.CreateEmployeeRequest;
+import frontendservice.employeegateway.EmployeeDto;
+import frontendservice.employeegateway.RoleDto;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -16,13 +18,16 @@ public class EmployeesService {
 
     private EmployeeClient employeeClient;
 
-    public List<Employee> listEmployees() {
+    public List<EmployeeDto> listEmployees() {
+        return employeeClient.employees();
     }
 
-    public List<Role> listRoles() {
+    public List<RoleDto> listRoles() {
+        return null;
     }
 
-    public void createEmployee(CreateEmployeeCommand command) {
+    public void createEmployee(CreateEmployeeRequest request) {
+
     }
 
 }
