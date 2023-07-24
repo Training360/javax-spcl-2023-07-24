@@ -40,3 +40,12 @@ docker run -d -e POSTGRES_DB=employees -e POSTGRES_USER=employees -e POSTGRES_PA
 * JDK beállítása
 * Alkalmazás indítása az `Application` osztállyal
 * A Swagger elérhető a `http://localhost:8081/swagger-ui.html` címen
+
+## course-service kiegészítése és indítása
+
+* `Service` osztály kiegészítése (entitás, repo is)
+
+```shell
+docker run -d -e POSTGRES_DB=course -e POSTGRES_USER=course -e POSTGRES_PASSWORD=course -p 5434:5432  --name course-postgres postgres
+```
+
