@@ -3,6 +3,7 @@ package courseservice.course.controller;
 import courseservice.course.dto.CourseDetailsView;
 import courseservice.course.dto.AnnounceCourseCommand;
 import courseservice.course.dto.CourseView;
+import courseservice.course.dto.EnrollCommand;
 import courseservice.course.service.CourseService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -33,5 +34,13 @@ public class CourseController {
         return courseService.createCourse(command);
     }
 
+    @PostMapping("/{courseId}/enrollments")
+    @ResponseStatus(HttpStatus.CREATED)
+    public CourseView enroll(@PathVariable long courseId, @RequestBody EnrollCommand command) {
+        if (courseId != command.getCourseId()) {
+            throw new IllegalArgumentException("Course ids differ");
+        }
+        return courseService.enroll(command);
+    }
 
 }
