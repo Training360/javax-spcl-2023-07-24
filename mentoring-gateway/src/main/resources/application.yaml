@@ -1,0 +1,21 @@
+server:
+  port: 8085
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: employees
+          uri: http://localhost:8081
+          predicates:
+            - Path=/api/employees
+          filters:
+            - AddRequestHeader=X-Request-Application, Mentoring
+        - id: roles
+          uri: http://localhost:8081
+          predicates:
+            - Path=/api/roles
+        - id: courses
+          uri: http://localhost:8083
+          predicates:
+            - Path=/api/courses
