@@ -8,7 +8,7 @@ spring:
         - id: employees
           uri: http://localhost:8081
           predicates:
-            - Path=/api/employees
+            - Path=/api/employees/**
           filters:
             - AddRequestHeader=X-Request-Application, Mentoring
             - name: CircuitBreaker
@@ -18,11 +18,11 @@ spring:
         - id: roles
           uri: http://localhost:8081
           predicates:
-            - Path=/api/roles
+            - Path=/api/roles/**
         - id: courses
           uri: http://localhost:8083
           predicates:
-            - Path=/api/courses
+            - Path=/api/courses/**
 management:
   endpoints:
     web:
