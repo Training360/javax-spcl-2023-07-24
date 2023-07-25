@@ -11,6 +11,10 @@ spring:
             - Path=/api/employees
           filters:
             - AddRequestHeader=X-Request-Application, Mentoring
+            - name: CircuitBreaker
+              args:
+                name: employeesCircuitBreaker
+                fallbackUri: forward:/api/dummy-employees
         - id: roles
           uri: http://localhost:8081
           predicates:
@@ -19,3 +23,8 @@ spring:
           uri: http://localhost:8083
           predicates:
             - Path=/api/courses
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

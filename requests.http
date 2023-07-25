@@ -44,3 +44,18 @@ GET http://localhost:8083/api/courses
 
 ### Find course by id
 GET http://localhost:8083/api/courses/1
+
+### List employees with Gateway
+GET http://localhost:8085/api/employees
+
+### Create employee with Gateway
+POST http://localhost:8085/api/employees
+Content-Type: application/json
+
+{
+    "name": "John Doe",
+    "roleId": 1
+}
+
+### Actuator
+GET http://localhost:8085/actuator/circuitbreakers
