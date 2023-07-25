@@ -21,14 +21,18 @@ public class BalatonstormsignalApplication {
 	}
 
 	@Bean
-	public Supplier<Mono<String>> download() {
-		return () ->
-				WebClient.builder().baseUrl("https://katasztrofavedelem.hu/application/uploads/cache/viharjelzo/SWSStations.json")
-						.build()
-						.get()
-						.retrieve().
-						bodyToMono(String.class)
-						.doOnNext(s -> log.info("Response body: {}", s));
+	public Function<Flux<String>, Flux<String>> download() {
+		return stringFlux ->
+				stringFlux
+						.doOnNext(s -> log.info("Message has come: {}", s))
+								.flatMap(s ->
+										WebClient.builder().baseUrl("https://katasztrofavedelem.hu/application/uploads/cache/viharjelzo/SWSStations.json")
+												.build()
+												.get()
+												.retrieve().
+												bodyToMono(String.class)
+								)
+				;
 	}
 
 //	@Bean
@@ -55,8 +59,8 @@ public class BalatonstormsignalApplication {
 				;
 	}
 
-	@Bean
-	public Consumer<Flux<StormSignalEvent>> logEvent() {
-		return stormSignalEventFlux -> stormSignalEventFlux.subscribe(e -> log.info("Event: {}", e));
-	}
+//	@Bean
+//	public Consumer<Flux<StormSignalEvent>> logEvent() {
+//		return stormSignalEventFlux -> stormSignalEventFlux.subscribe(e -> log.info("Event: {}", e));
+//	}
 }

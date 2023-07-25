@@ -50,3 +50,9 @@ docker run -d -e POSTGRES_DB=course -e POSTGRES_USER=course -e POSTGRES_PASSWORD
 ```
 
 * enrollment
+
+## Spring Cloud Stream Kafka Reactive
+
+```
+docker exec -it kafka-kafka-1 kafka-console-producer.sh --bootstrap-server localhost:9092 --topic downloadparseconvertfilter-in-0
+```
