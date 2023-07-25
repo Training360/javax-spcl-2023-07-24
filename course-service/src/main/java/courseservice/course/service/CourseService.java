@@ -7,6 +7,7 @@ import courseservice.course.dto.EnrollCommand;
 import courseservice.course.model.Course;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,9 +23,15 @@ public class CourseService {
 
     private CourseMapper courseMapper;
 
+    private ApplicationEventPublisher applicationEventPublisher;
+
     public CourseView createCourse(AnnounceCourseCommand command) {
         var course = Course.announceCourse(command);
         courseRepository.save(course);
+
+        var event = new CourseHasCreatedEvent(course.getId(), course.getName(), course.getDescription(), course.getSyllabus());
+        applicationEventPublisher.publishEvent(event);
+
         return courseMapper.toView(course);
     }
 
