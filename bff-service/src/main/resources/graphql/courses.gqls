@@ -1,0 +1,9 @@
+type Query {
+    courses: [Course]!
+}
+
+type Course {
+    id: ID!
+    name: String!
+    limit: Int
+}

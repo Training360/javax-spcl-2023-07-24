@@ -1,6 +1,5 @@
 package frontendservice.service;
 
-import frontendservice.careergateway.CareerClient;
 import frontendservice.employeesgateway.Role;
 import frontendservice.employeesgateway.CreateEmployeeCommand;
 import frontendservice.employeesgateway.Employee;
