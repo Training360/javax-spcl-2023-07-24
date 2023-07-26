@@ -54,7 +54,7 @@ Content-Type: application/json
 GET http://localhost:8083/api/courses
 
 ### Find course by id
-GET http://localhost:8083/api/courses/3
+GET http://localhost:8083/api/courses/2
 
 ### List employees with Gateway
 GET http://localhost:8085/api/employees
@@ -98,8 +98,9 @@ POST http://localhost:8084/api/enrollments
 Content-Type: application/json
 
 {
-    "employeeId": 1,
-    "courseId": 1
+    "employeeId": 7,
+    "courseId": 2
 }
 
-
+### Config server
+GET http://localhost:8888/employee-service.properties
