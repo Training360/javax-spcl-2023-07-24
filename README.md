@@ -68,3 +68,21 @@ docker run -d -e "discovery.type=single-node" -e xpack.security.enabled=false -p
 ```shell
 docker run -d -e POSTGRES_DB=career -e POSTGRES_USER=career -e POSTGRES_PASSWORD=career -p 5435:5432  --name career-postgres postgres
 ```
+
+## Keycloak indítása
+
+```shell
+docker run -d -e KEYCLOAK_USER=root -e KEYCLOAK_PASSWORD=root -p 8089:8080 --name keycloak jboss/keycloak
+```
+
+Keycloak elérés: `http://localhost:8089/`
+
+* Létre kell hozni egy Realm-et (`Mentoring`)
+* Létre kell hozni egy klienst, amihez meg kell adni annak azonosítóját, <br /> és hogy milyen url-en érhető el (`employee-service`)
+* Létre kell hozni egy klienst, amihez meg kell adni annak azonosítóját, <br /> és hogy milyen url-en érhető el (`frontend-service`)
+* Létre kell hozni a szerepköröket (`employee_admin`)
+* Létre kell hozni egy felhasználót (a _Email Verified_ legyen _On_ értéken, hogy be lehessen vele jelentkezni), 
+  beállítani a jelszavát (a _Temporary_ értéke legyen _Off_, hogy ne kelljen jelszót módosítani), <br /> valamint hozzáadni a szerepkört (`johndoe`)
+
+
+Client Scopes/roles/Mappers/realm roles/Add to ID token
