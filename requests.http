@@ -104,3 +104,9 @@ Content-Type: application/json
 
 ### Config server
 GET http://localhost:8888/employee-service.properties
+
+### Keycloak
+POST http://localhost:8089/auth/realms/Mentoring/protocol/openid-connect/token
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=password&client_id=frontend-service&username=johndoe&password=johndoe

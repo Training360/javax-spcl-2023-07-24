@@ -86,3 +86,5 @@ Keycloak elérés: `http://localhost:8089/`
 
 
 Client Scopes/roles/Mappers/realm roles/Add to ID token
+
+http://localhost:8089/auth/realms/Mentoring/.well-known/openid-configuration
