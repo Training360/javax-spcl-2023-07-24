@@ -2,6 +2,8 @@ server:
   port: 8085
 
 spring:
+  application:
+    name: mentoring-gateway
   cloud:
     gateway:
       routes:
@@ -24,6 +26,9 @@ spring:
           predicates:
             - Path=/api/courses/**
 management:
+  tracing:
+    sampling:
+      probability: 1.0
   endpoints:
     web:
       exposure:
