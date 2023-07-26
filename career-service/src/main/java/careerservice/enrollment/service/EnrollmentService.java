@@ -1,5 +1,6 @@
 package careerservice.enrollment.service;
 
+import careerservice.enrollment.model.EnrollmentStatus;
 import careerservice.enrollment.view.EnrollmentView;
 import careerservice.enrollment.model.EnrollCommand;
 import careerservice.enrollment.model.Enrollment;
@@ -35,4 +36,19 @@ public class EnrollmentService {
         }
     }
 
+    @Transactional
+    public void enrolled(long courseId, long employeeId) {
+        var enrollment = enrollmentRepository.findByCourseIdAndEmployeeId(courseId, employeeId);
+        if (enrollment.isPresent()) {
+            enrollment.get().complete();
+        }
+    }
+
+    @Transactional
+    public void cancel(long courseId, long employeeId) {
+        var enrollment = enrollmentRepository.findByCourseIdAndEmployeeId(courseId, employeeId);
+        if (enrollment.isPresent()) {
+            enrollment.get().cancel();
+        }
+    }
 }

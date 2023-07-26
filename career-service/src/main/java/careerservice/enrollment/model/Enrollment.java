@@ -31,4 +31,11 @@ public class Enrollment {
         return enrollment;
     }
 
+    public void complete() {
+        enrollmentStatus = EnrollmentStatus.COMPLETED;
+    }
+
+    public void cancel() {
+        enrollmentStatus = EnrollmentStatus.CANCELLED;
+    }
 }
