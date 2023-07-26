@@ -93,3 +93,13 @@ Content-Type: application/json
 }
 }
 
+### Career service enroll
+POST http://localhost:8084/api/enrollments
+Content-Type: application/json
+
+{
+    "employeeId": 1,
+    "courseId": 1
+}
+
+
