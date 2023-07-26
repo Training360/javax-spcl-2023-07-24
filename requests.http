@@ -35,10 +35,10 @@ POST http://localhost:8083/api/courses
 Content-Type: application/json
 
 {
-    "name": "Spring Boot",
+    "name": "Course raspberry",
     "limit": 5,
-    "description": "Very nice course",
-    "syllabus": "Boot tutorial, Boot advanced"
+    "description": "Course raspberry",
+    "syllabus": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse mollis, nibh non pharetra aliquet, eros diam venenatis dui, eget efficitur ex turpis vitae leo. Aliquam erat volutpat. Vestibulum fermentum massa et suscipit viverra. Aenean ornare ut risus quis dictum. Donec quis finibus turpis. Aenean diam mi, porta eu enim ac, tempor lacinia diam. Aenean accumsan mollis quam, quis rhoncus turpis hendrerit a. Fusce dignissim, ex sit amet porttitor sodales, erat diam efficitur mauris, sit amet feugiat felis lectus at libero. Mauris eget egestas dolor. Integer sapien metus, tempus nec urna nec, mollis tincidunt libero. Donec convallis risus at nunc rhoncus, ut convallis nisl molestie. Nullam sagittis felis non justo dictum, sagittis vehicula ipsum dictum. Integer vel porta lectus. Cras vulputate felis vulputate libero lacinia consectetur. Praesent tempus, quam id blandit convallis, elit nisl condimentum justo, non bibendum massa sem in purus. Pellentesque bibendum sollicitudin tincidunt.Nullam efficitur, nibh egestas tempus malesuada, enim erat sagittis enim, vel vehicula ante orci ut velit. Maecenas ultrices metus est, volutpat viverra nisi lacinia in. Nullam id bibendum justo. Mauris vehicula feugiat odio sit amet pulvinar. Vestibulum semper dui eget ipsum convallis, sit amet commodo metus finibus. Ut sed ornare elit. Praesent cursus posuere pellentesque. Vivamus nulla ante, volutpat in dignissim in, ultricies eu arcu. Fusce malesuada mauris sed egestas laoreet. Integer consectetur metus vel odio bibendum, sit amet finibus odio semper. Etiam condimentum faucibus mollis. Maecenas et leo justo. Pellentesque lobortis congue porta. Nulla eget augue eget est mattis elementum nec vel dolor."
 }
 
 ### Enroll
@@ -70,3 +70,26 @@ Content-Type: application/json
 
 ### Actuator
 GET http://localhost:8085/actuator/circuitbreakers
+
+### Course view
+GET http://localhost:8086/api/course-documents
+
+### Course view query
+GET http://localhost:8086/api/course-documents/query?word=malesuada
+
+
+### ElasticSearch
+GET http://localhost:9200/courses/_search?pretty=true
+
+### ElasticSearch
+POST http://localhost:9200/courses/_search?pretty=true
+Content-Type: application/json
+
+{"query": {
+    "multi_match": {
+        "query": "malesuada",
+        "fields": ["name", "description", "syllabus"]
+    }
+}
+}
+

@@ -16,9 +16,12 @@ public class CourseViewServiceApplication {
 	}
 
 	@Bean
-	public Consumer<CourseHasCreatedEvent> handleEvent() {
-		return courseHasCreatedEvent ->
+	public Consumer<CourseHasCreatedEvent> handleEvent(CourseDocumentService service) {
+		return courseHasCreatedEvent -> {
 			log.error("Event has come: {}", courseHasCreatedEvent);
+			service.saveCourseDocument(courseHasCreatedEvent);
+		};
+
 	}
 
 }
